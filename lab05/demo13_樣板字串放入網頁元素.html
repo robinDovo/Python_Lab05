@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>學生資料 靜態網頁</h1>
+<p>Tom</p>
+<p>87</p>
+<p>98</p>
+
+<h1>學生資料 動態網頁(程式產生)</h1>
+<div id="aaa">
+
+</div>
+<script>
+    // 學生物件(資料)
+    let st = {
+        name:"Robin",
+        eng: 99,
+        math: 76
+    };
+    // JS 樣板字串 ` ` 類似 Python 多行字串 f 字串格式化
+    let s = `
+        <p>${st.name}</p>
+        <p>${st.eng}</p>
+        <p>${st.math}</p>
+        <p>${st.eng + st.math}</p>;
+    `
+    //透過 id 找到網頁當中的特定元素
+    let div = document.getElementById("aaa");
+    // 修改 元素內容 innerHTML
+    div.innerHTML = s;
+</script>
+</body>
+</html>

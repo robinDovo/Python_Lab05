@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let data = [
+        {name: 'Robin', eng: 89, math: 99},
+        {name: 'Mary', eng: 99, math: 76}
+    ];
+
+    function 總分() {
+        return this.eng + this.math;
+    }
+    function show(data, totFunc){
+        console.log('----show----')
+        for (let st of data){
+            let tot = totFunc.call(st)
+            let s = `${st.name} ${st.eng} ${st.math} ${tot}`
+            console.log(s)
+        }
+    }
+    // 呼叫 show()
+    show(data, 總分)
+    // 呼叫 show() 採 匿名函式 設計總分函式
+    show(data, function (){
+        return this.eng + this.math
+    })
+    // 呼叫 show() 採 匿名函式 設計總分函式
+    show(data, function (){
+        // 英文 成績 加權
+        return (this.eng * 1.2) + this.math
+    })
+
+
+</script>
+</body>
+</html>

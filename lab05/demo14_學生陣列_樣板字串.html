@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .學生 {
+            margin: 16px 16px 100px 16px;
+        }
+    </style>
+</head>
+<body>
+<h1>學生資料 靜態網頁</h1>
+<p>Tom</p>
+<p>87</p>
+<p>98</p>
+
+<h1>學生資料 動態網頁(程式產生)</h1>
+<div id="aaa">
+</div>
+
+<script>
+    let a = [
+        {
+            name:"Robin",
+            eng: 100,
+            math: 87
+        },
+        {
+            name:"Jacky",
+            eng: 97,
+            math: 88
+        },
+        {
+            name:"Mary",
+            eng: 79,
+            math: 90
+        }
+    ];
+
+let s = "";
+for(let st of a){
+    let t = `
+        <div class="學生">
+            <p>${st.name}</p>
+            <p>${st.eng}</p>
+            <p>${st.math}</p>
+            <p>${st.eng + st.math}</p>
+        </div>`;
+    s += t;
+}
+let div = document.getElementById("aaa");
+div.innerHTML = s;
+
+</script>
+</body>
+</html>

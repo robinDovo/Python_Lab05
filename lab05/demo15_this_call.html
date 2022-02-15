@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   //一個陣列有兩個物件 (相當於 Python 串列當中有兩個字典)
+  //let data = [{}, {}];
+  let data = [
+    {name: 'Robin', eng: 89, math: 99},
+    {name: 'Mary', eng: 99, math: 76}
+  ];
+  // 物件 即 學生資料
+  // this 物件 代表 某位學生資料
+  // 可透過 call() 指定，this 相當於 Python self
+  function 總分(){
+      console.log('-----總分計算----');
+      console.log(this.name);
+      let tot = this.eng + this.math;
+      console.log(tot);
+      return tot;
+  }
+
+   console.log('------data[0]------')
+   console.log(data[0]);
+   // 透過 call () 呼叫 總成函式 指定 this 是哪位學生
+   let tot = 總分.call(data[0]);
+   console.log('總分 返回值' + tot);
+</script>
+</body>
+</html>

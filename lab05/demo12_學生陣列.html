@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let a = [{},{},{}]; 相當於 Python 串列當中放了三個字典
+     let a = [
+         {
+             name:"Robin",
+             eng: 100,
+             math: 87
+         },
+         {
+             name:"Jacky",
+             eng: 97,
+             math: 88
+         },
+         {
+             name:"Mary",
+             eng: 79,
+             math: 90
+         },
+     ];
+     console.log(a);
+     console.log(a[0].name);
+     // for 迴圈 類似 Python for st in a
+     console.log("-----for 迴圈 讀取陣列 -----")
+     for(let st of a){  //st 區域變數，從 a 陣列 讀取的某個學生物件
+         console.log(st.name);
+         console.log(st.eng);
+         console.log(st.math);
+         console.log(st.eng + st.math);
+     }
+</script>
+</body>
+</html>
